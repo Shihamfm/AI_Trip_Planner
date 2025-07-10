@@ -4,24 +4,38 @@ from prompt_library import SYSTEM_PROMPT
 from langgraph import StateGraph, MessageState, END, START
 from langgraph import ToolNode, tools_condition
 
-#from tools.weather_info_tool import WeatherInfoTool
-#from tools.place_search_tool import PlaceSearchTool
-#from tools.expense_calculator_tool import Calculatortool
-#from tools.currency_conversion_tool import CurrencyConverterTool
+from tools.weather_info_tool import WeatherInfoTool
+from tools.place_search_tool import PlaceSearchTool
+from tools.expense_calculator_tool import Calculatortool
+from tools.currency_conversion_tool import CurrencyConverterTool
 
 
 
 class GraphicBuilder():
     
     
-    def __init__(self):
-        self.tools = [
-            # WeatherInfoTool(),
-            # PlaceSearchTool(),    
-            # Calculatortool(),
-            # CurrencyConverterTool()
-        ]
+    def __init__(self, model_provider: str = "groq"):
+        self.model_loader = ModelLoader(model_provider=model_provider)
+        self.llm = self.model_loader.load_llm()
+        
+        self.tools = []
+        
+        self.weather_tools = WeatherInfoTool()
+        self.place_search_tools = PlaceSearchTool()
+        self.calculator_tools = Calculatortool()
+        self.currency_converter_tools = CurrencyConverterTool()
+        
+        self.tools.extend([* self.weather_tools.weather_tool_list, 
+                           * self.place_search_tools.plase_search_tool_list, 
+                           * self.calculator_tools.calculator_tool_list, 
+                           * self.currency_converter_tools.currency_converter_tool_list])
+        
+        self.llm_with_tools = self.model_loader.llm_bind_tools(tools=self.tools)
+        
+        self.graph = None
+        
         self.system_prompt = SYSTEM_PROMPT
+    
     
     def agent_function(self, state: MessageState):
         """Main agent function

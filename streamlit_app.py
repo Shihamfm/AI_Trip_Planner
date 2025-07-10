@@ -24,7 +24,7 @@ if "messages" not in st.session_state:
 st.header("How can I help you in planning a trip? Let me know where do you want to visit.")
 
 # Chat input box at bottom
-with st.form():
+with st.form(key="Trip_input_form"):
     user_input = st.text_input("User imput:", placeholder="plan a trip to Paris for 5 days")
     submit_button = st.form_submit_button("Send")
 
