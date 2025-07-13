@@ -26,7 +26,7 @@ class ModelLoader(BaseModel):
         self.config = Configloader()
         
     class Config:
-        arbitary_types_allowed = True
+        arbitrary_types_allowed = True
         
     def load_llm(self):
         """Load and return the LLM model.
