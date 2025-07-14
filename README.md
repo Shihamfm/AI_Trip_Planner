@@ -50,7 +50,6 @@ This project leverages **Large Language Models (LLMs)** combined with custom-bui
 
 ### 1. Clone the repo
 
-```bash
 git clone https://github.com/Shihamfm/AI_Trip_Planner.git
 cd AI_Trip_Planner
 
