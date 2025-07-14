@@ -43,6 +43,30 @@ This project leverages **Large Language Models (LLMs)** combined with custom-bui
 
 ## 📂 Repository Structure
 
+AI_Trip_Planner/
+├── agent/
+│ ├── agentic_workflow.py
+│ └── init.py
+├── tools/
+│ ├── place_search_tool.py
+│ ├── currency_conversion_tool.py
+│ ├── expense_calculator_tool.py
+│ ├── weather_info_tool.py
+│ └── init.py
+├── utils/
+│ ├── place_info_search.py
+│ ├── currency_converter.py
+│ ├── model_loader.py
+│ └── init.py
+├── tests/
+│ ├── test_graph.py
+│ └── init.py
+├── streamlit_app.py
+├── main.py
+├── requirements.txt
+├── .env
+├── README.md
+└── LICENSE
 
 ---
 
@@ -64,12 +88,12 @@ pip install -r requirements.txt
 ### 4. Configure environment variables
 Create a .env file in the root directory with your API keys:
 
-GROQ_API_KEY=your_groq_api_key_here
-GPLACES_API_KEY=your_google_places_api_key_here
-TAVILY_API_KEY=your_tavily_api_key_here
-EXCHANGE_RATE_API_KEY=your_exchange_rate_api_key_here
-WEATHER_API_KEY=your_weather_api_key_here
+GROQ_API_KEY=groq_api_key_here <br>
+TAVILY_API_KEY=tavily_api_key_here <br>
+EXCHANGE_RATE_API_KEY=exchange_rate_api_key_here <br>
+WEATHER_API_KEY=weather_api_key_here
 
+---
 ## 🚀 Running the Application
 
 ### Start the FastAPI backend server:
@@ -81,29 +105,24 @@ streamlit run streamlit_app.py
 Now open your browser and visit:
 http://localhost:8501
 
+---
 ## 📝 Usage
-Enter your travel query in the chat box (e.g., "Plan a trip to Paris for 5 days").
+- Enter your travel query in the chat box (e.g., "Plan a trip to Paris for 5 days").
+- The AI agent will process your request using the integrated APIs and respond with a detailed travel plan.
+- Explore attractions, restaurants, weather, currency conversions, and more.
+- View internal agent workflow graphs saved as my_graph_png for debugging.
 
-The AI agent will process your request using the integrated APIs and respond with a detailed travel plan.
-
-Explore attractions, restaurants, weather, currency conversions, and more.
-
-View internal agent workflow graphs saved as my_graph_png for debugging.
-
+---
 ## 🛠️ How It Works
-User Query is sent from the frontend to the FastAPI backend.
-
-Backend invokes the GraphBuilder which loads the LLM and tools.
-
-The LLM-based agent uses a state graph to call appropriate tools (e.g., place search, weather).
-
-Responses are aggregated and returned as a coherent answer.
-
-Frontend displays the AI-generated travel plan to the user.
-
+- User Query is sent from the frontend to the FastAPI backend.
+- Backend invokes the GraphBuilder which loads the LLM and tools.
+- The LLM-based agent uses a state graph to call appropriate tools (e.g., place search, weather).
+- Responses are aggregated and returned as a coherent answer.
+- Frontend displays the AI-generated travel plan to the user.
+---
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open issues or pull requests for new features, bug fixes, or improvements.
-
+---
 ## 💬 Contact
 Created by Shiham Farook. https://www.linkedin.com/in/shihamfm/
 Feel free to reach out for collaboration or questions!
