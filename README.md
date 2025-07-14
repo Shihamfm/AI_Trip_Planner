@@ -42,31 +42,31 @@ This project leverages **Large Language Models (LLMs)** combined with custom-bui
 ---
 
 ## 📂 Repository Structure
-
 AI_Trip_Planner/
 ├── agent/
-│ ├── agentic_workflow.py
-│ └── init.py
+│   ├── agentic_workflow.py
+│   └── __init__.py
 ├── tools/
-│ ├── place_search_tool.py
-│ ├── currency_conversion_tool.py
-│ ├── expense_calculator_tool.py
-│ ├── weather_info_tool.py
-│ └── init.py
+│   ├── place_search_tool.py
+│   ├── currency_conversion_tool.py
+│   ├── expense_calculator_tool.py
+│   ├── weather_info_tool.py
+│   └── __init__.py
 ├── utils/
-│ ├── place_info_search.py
-│ ├── currency_converter.py
-│ ├── model_loader.py
-│ └── init.py
+│   ├── place_info_search.py
+│   ├── currency_converter.py
+│   ├── model_loader.py
+│   └── __init__.py
 ├── tests/
-│ ├── test_graph.py
-│ └── init.py
+│   ├── test_graph.py
+│   └── __init__.py
 ├── streamlit_app.py
 ├── main.py
 ├── requirements.txt
 ├── .env
 ├── README.md
 └── LICENSE
+
 
 ---
 
@@ -122,6 +122,7 @@ http://localhost:8501
 ---
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open issues or pull requests for new features, bug fixes, or improvements.
+
 ---
 ## 💬 Contact
 Created by Shiham Farook. https://www.linkedin.com/in/shihamfm/
