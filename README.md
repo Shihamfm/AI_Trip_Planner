@@ -42,7 +42,7 @@ This project leverages **Large Language Models (LLMs)** combined with custom-bui
 ---
 
 ## 📂 Repository Structure
-'''bash
+```bash
 AI_Trip_Planner/
 ├── agent/
 │ ├── agentic_workflow.py
@@ -67,7 +67,7 @@ AI_Trip_Planner/
 ├── .env
 ├── README.md
 └── LICENSE
-'''
+```
 ---
 
 ## 🔧 Setup & Installation
