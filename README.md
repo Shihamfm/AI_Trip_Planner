@@ -81,7 +81,7 @@ cd AI_Trip_Planner
 
 ```pip install uv```
 
-```uv init AI_Travel_Planner```
+```uv init AI_Trip_Planner```
 
 ```uv pip list```
 
