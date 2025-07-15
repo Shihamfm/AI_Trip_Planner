@@ -78,9 +78,21 @@ git clone https://github.com/Shihamfm/AI_Trip_Planner.git
 cd AI_Trip_Planner
 
 ### 2. Create and activate Python environment
-python -m venv env
-source env/bin/activate   # Linux/macOS
-env\Scripts\activate      # Windows
+
+```pip install uv```
+
+```uv init AI_Travel_Planner```
+
+```uv pip list```
+
+```uv python list```
+
+```uv python install ypy-3.10.16-windows-x86_64-none```
+
+```uv python list```
+
+```uv venv env --python cpython-3.10.18-windows-x86_64-none```
+
 
 ### 3. Install dependencies
 pip install -r requirements.txt
